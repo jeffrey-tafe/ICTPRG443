@@ -1,0 +1,4 @@
+p100;Milk;2.50
+p200;Chocolates;3.75
+p300;Bread;2.25
+p400;Toilet Paper;9.75
