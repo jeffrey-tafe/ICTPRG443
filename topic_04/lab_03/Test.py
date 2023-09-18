@@ -1,4 +1,5 @@
 from Vehicle import Vehicle
+from Car import Car
 
 car1 = Vehicle("123abc", "Toyota", "Camry", 350)
 car2 = Vehicle("987nbv", "Bugatti", "B80", 5000)
@@ -18,3 +19,13 @@ print(car1.__eq__(car2))
 
 print("\nTesting comparing car1 to car3. Should be true")
 print(car1.__eq__(car3))
+
+print("\nTesting car subclass of vehicle with object car4")
+car4 = Car("987456",
+               "Nissan",
+               "Skyline",
+               1200,
+               "Sports",
+               True
+               )
+print(car4)

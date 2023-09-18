@@ -1,5 +1,5 @@
 class Vehicle:
-    # Constructors
+    # Constructor
     def __init__(self,
                  registration_number="NOT REGISTERED",
                  make="NO MAKE",
