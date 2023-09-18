@@ -1,8 +1,8 @@
 from Vehicle import Vehicle
 
-car1 = Vehicle("123abc", "Toyota", "Camry")
-car2 = Vehicle("987nbv", "Bugatti", "B80")
-car3 = Vehicle("123abc", "Toyota", "Camry")
+car1 = Vehicle("123abc", "Toyota", "Camry", 350)
+car2 = Vehicle("987nbv", "Bugatti", "B80", 5000)
+car3 = Vehicle("123abc", "Toyota", "Camry", 800)
 
 print("\ncar1")
 print(car1)
