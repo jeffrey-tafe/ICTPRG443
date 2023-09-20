@@ -8,6 +8,10 @@ class StockTest(unittest.TestCase):
         self.stock1 = Stock("Intel", "INT", 32.45, 30)
         self.stock2 = Stock("Microsoft", "MSFT", 68.10, 72.10)
 
+    def tearDown(self):
+        del self.stock1
+        del self.stock2
+
     def test_get_name(self):
         result = self.stock1.get_name()
         self.assertEqual(result, "Intel")
@@ -46,7 +50,6 @@ class StockTest(unittest.TestCase):
         expected += "\nCurrent Price: 72.1"
         expected += "\nPrice Change Percentage: 5.873715124816447%"
         self.assertEqual(result, expected)
-
 
 if __name__ == '__main__':
     unittest.main()
