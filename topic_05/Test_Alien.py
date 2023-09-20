@@ -1,5 +1,5 @@
 import unittest as ut
-from Alien_Class import *
+from Alien_Class import Alien
 
 
 class AlienTestCase(ut.TestCase):
@@ -10,6 +10,7 @@ class AlienTestCase(ut.TestCase):
     def test_lives(self):
         lives = self.alien.get_lives()
         self.assertEqual(lives, 10)
+        # self.assertTrue(lives == 10)
 
     def test_strength(self):
         strength = self.alien.get_strength()
@@ -27,5 +28,6 @@ class AlienTestCase(ut.TestCase):
         del self.alien
         print("Tear Down")
 
-    if __name__ == '__main__':
-        ut.main()
+
+if __name__ == '__main__':
+    ut.main()
