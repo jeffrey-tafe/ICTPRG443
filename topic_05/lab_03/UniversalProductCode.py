@@ -5,11 +5,12 @@ class UniversalProductCode:
 
     def is_valid(self):
         # Ensure we have digits only, if not then raise an exception
-        if self.code.isdigit() == False:
-            raise Exception('Only digits allowed in product code!')
-        
+        if not self.code.isdigit():
+            raise TypeError('Only digits allowed in product code!')
+            return False
+
         # Grab the final digit of the product code        
-        provided_check_digit = int( self.code[-1:] )
+        provided_check_digit = int( self.code[-1:])
 
         # Grab everything EXCEPT the final digit of the product code
         code_without_check_digit = self.code[:-1]
@@ -42,3 +43,4 @@ class UniversalProductCode:
             return True
         else:
             return False
+
