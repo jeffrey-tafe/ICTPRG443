@@ -33,13 +33,24 @@ class Course:
     # Methods
     def __add_students(self):
         self.__all_students = []
-        stud1 = Student("001", "Jimmy", "Little", "MUSIC101")
-        stud2 = Student("002", "Bill", "Burr", "COMEDY101")
-        self.__all_students.append(stud1)
-        self.__all_students.append(stud2)
+
+        # Open student file with context manager
+        with open('students.txt', 'r') as student_file:
+            for line in student_file:
+
+                # Split the line into fields
+                fields = line.strip().split(',')
+
+                # Get named properties from each field in list
+                id, first_name, last_name, qual_code = fields
+
+                # Create student object from properties
+                student = Student(id, first_name, last_name, qual_code)
+
+                # Add to student list
+                self.__all_students.append(student)
 
     # To string override
-
     def __str__(self):
         details = f"\n{super().__str__()}"
         details += f"\n["
