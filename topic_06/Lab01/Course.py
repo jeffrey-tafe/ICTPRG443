@@ -1,13 +1,15 @@
+from Student import Student
+
 class Course:
 
     # Constructor
-    def __init__(self, course_name, day_of_week, time, room, lecturer, students):
+    def __init__(self, course_name, day_of_week, time, room, lecturer):
         self.__course_name = course_name
         self.__day_of_week = day_of_week
         self.__time = time
         self.__room = room
         self.__lecturer = lecturer
-        self.__students = students
+        self.__add_students()
 
     # Getters
     def get_course_name(self):
@@ -26,7 +28,15 @@ class Course:
         return self.__lecturer
 
     def get_students(self):
-        return self.__students
+        return self.__all_students
+
+    # Methods
+    def __add_students(self):
+        self.__all_students = []
+        stud1 = Student("001", "Jimmy", "Little", "MUSIC101")
+        stud2 = Student("002", "Bill", "Burr", "COMEDY101")
+        self.__all_students.append(stud1)
+        self.__all_students.append(stud2)
 
     # To string override
 
@@ -41,7 +51,7 @@ class Course:
 
         # Build string of student array details
         student_string = ""
-        for student in self.__students:
+        for student in self.__all_students:
             student_string += student.__str__()
 
         details += f"\n\tStudents: {student_string}"
