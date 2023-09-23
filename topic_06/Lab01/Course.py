@@ -1,12 +1,17 @@
 from Student import Student
 
+
 class Course:
+
+    # Constants
+    __VALID_DAYS_OF_WEEK = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+    __VALID_CLASS_TIMES = ["0900-1100", "1130-1330", "1400-1600"]
 
     # Constructor
     def __init__(self, course_name, day_of_week, time, room, lecturer):
         self.__course_name = course_name
-        self.__day_of_week = day_of_week
-        self.__time = time
+        self.set_day_of_week(day_of_week)
+        self.set_time(time)
         self.__room = room
         self.__lecturer = lecturer
         self.__add_students()
@@ -29,6 +34,19 @@ class Course:
 
     def get_students(self):
         return self.__all_students
+
+    # Setters
+    def set_day_of_week(self, day):
+        if day.strip().title() not in Course.__VALID_DAYS_OF_WEEK:
+            self.__day_of_week = "Day Of Week Not Set"
+        else:
+            self.__day_of_week = day
+
+    def set_time(self, time):
+        if time.strip() in Course.__VALID_CLASS_TIMES:
+            self.__time = time.strip()
+        else:
+            self.__time = "Time Not Set"
 
     # Methods
     def __add_students(self):
