@@ -7,7 +7,6 @@
 # 5. How would you handle invalid login credentials?
 
 import sqlite3
-import re
 
 
 def create_db_connection(db_name):
