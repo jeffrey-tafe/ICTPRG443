@@ -4,11 +4,12 @@ from dataclasses import dataclass
 # any other methods. They are typically used to store information that will be
 # passed between different parts of a program or a system
 
+
 @dataclass()
 class Product:
     id: str
-    parent:str
-    title:str
+    parent: str
+    title: str
     category: str
 
     def __str__(self):
